@@ -82,20 +82,35 @@ WHERE
 #   JOBS_ID available in the employees table.
 #     [HINT: look up the DISTINCT operator]
 
+SELECT DISTINCT JOB_ID 
+FROM Employees;
 
 
 # 8 Write a query to display the first name of all employees who have the letters
 #   "b" or "c" in their first name.
 #     [HINT: research LIKE operator]
 
+SELECT FIRST_NAME 
+FROM Employees 
+WHERE 
+  (FIRST_NAME LIKE '%b%' OR FIRST_NAME LIKE '%c%');
 
 
 # 9 Write a query to display the last name of employees whose names
 #   have exactly 6 characters.
 #     [HINT: look up CHARLENGTH operator  ]
 
+SELECT LAST_NAME 
+FROM Employees 
+WHERE 
+  CHAR_LENGTH (FIRST_NAME) = 6;
 
 
 # 10 Write a query to display the last name of employees having 'e'
 #    as the third character.
 #     [HINT: look up SUBSTRING operator ]
+
+SELECT LAST_NAME
+FROM Employees 
+WHERE 
+  SUBSTR(LAST_NAME,3) LIKE 'e%';
